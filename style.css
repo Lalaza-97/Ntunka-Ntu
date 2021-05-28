@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium+Web', sans-serif;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient( #000c18, #2b1055);
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+header .logo{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+}
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+header ul li a:hover{
+    background: #fff;
+    color: #2b1055;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+/*edit dividing line*/
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #000c18, transparent);
+    z-index: 1000;
+}
+
+section img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+section img#star{
+    mix-blend-mode: screen;
+}
+section img#moon{
+    mix-blend-mode: screen;
+}
+section img#rock{
+    z-index: 10;
+}
+#text{
+    position: absolute;
+    top: 50%;
+    right: -450px;
+    transform: translateY(-50%);
+    /*right: -350px;*/
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+    text-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    font-family: 'Rancho', cursive;
+}
+.btn{
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+/*About*/
+.about{
+    position: relative;
+    padding: 100px;
+}
+.about h2{
+    font-size: 3.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.about h3{
+    font-size: 1.5em;
+    color: #fff;
+}
+.about p{
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 300;
+}
+
+/*about*/
+.about .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 80px;
+    padding-bottom: 20px;
+    font-family: 'Titillium+Web', sans-serif;
+}
+.about .letter{
+    position: relative;
+    text-align: left;
+    font-size: 30px;
+}
+.about .about-content .column{
+    width: calc(50% - 30px);
+}
+.about .about-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right img{
+    margin-bottom: 15px;
+}
+
+/*all similar*/
+section{
+    padding: 100px 0;
+}
+.about, .tricks{
+    font-family: 'Titillium+Web', sans-serif;
+}
+.about .about-content, 
+.tricks .tricks-content
+ {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-content .column{
+    width: 50%;
+}
+.about .about-content .right{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 60px;
+}
+
+
+
+/*card*/
+.Tricks_container{
+    width: 100%;
+    height: 100%;
+    font-family: 'Rancho', sans-serif;
+    background: #000c18;
+}
+.Tricks_container #img{
+    position: absolute;
+    bottom: -190%;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+/*container_1*/
+.flip_container_1{
+    position: relative;
+    width: 320px;
+    height: 390px;
+}
+.front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: #000c18;
+}
+.front img{
+    background-size: cover;
+}
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: grey;
+    color: #000c18;
+    transform: rotateY(180deg);
+}
+/*container_2*/
+.flip_container_2{
+    position: relative;
+    width: 320px;
+    height: 390px;
+}
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit(250px, 1fr));
+    grid-gap: 20px;
+}
+.card{
+    position: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+.card:hover{
+    transform: rotateY(180deg);
+}
+.front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: #000c18;
+}
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: grey;
+    color: #000c18;
+    transform: rotateY(180deg);
+}
+/*container_3*/
+.flip_container_3{
+    position: relative;
+    width: 320px;
+    height: 390px;
+}
+.front #meg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    color: #000c18;
+    text-align: center;
+    font-family: 'Rancho', sans-serif;
+    border-radius: 20PX;
+    font-size: 30PX;
+}
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: grey;
+    color: #000c18;
+    transform: rotateY(180deg);
+    text-align: center;
+    font-family: 'Rancho', sans-serif;
+    border-radius: 20PX;
+    font-size: 30PX;
+    font-weight: bold;
+}
+
+
+@media (max-width: 992px) {
+    @media (max-width: 1104px) {
+        .about .about-content .right img{
+            height: 350px;
+            width: 500px;
+        }
+    }
+
+    #header{
+        padding: 20px;
+    }
+    #header .logo{
+        font-size: 1.5em;
+    }
+    #header ul{
+        display: none;
+    }
+    #header ul.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background: #2b1055;
+    }
+    #header ul li{
+        margin-left: 0;
+    }
+    #header ul li a{
+        font-size: 1.2em;
+        margin: 5px 0;
+        display: inline-block;
+    }
+    .toggle{
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(open.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 10000;
+    }
+    .toggle.active{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: url(close.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .about{
+        padding: 20px;
+    }
+    .about h2{
+        font-size: 1.5em;
+    }
+    section img#stars{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .section img#tree{
+        transform: translateY(-5px);
+    }
+    #text{
+        font-size: 15vw;
+    }
+    /*cards*/
+    .row{
+        text-align: ;
+    }
+}
